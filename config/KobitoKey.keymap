@@ -24,7 +24,7 @@
             bindings = <
 &kp SLASH     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS  &kp RA(F4)     &kp RA(LEFT_ARROW)  &mkp MB3      &kp RA(RIGHT)  &kp PAGE_UP
 &kp ASTERISK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS   &kp RS(PLUS)   &mkp MB1            &kp UP_ARROW  &mkp MB2       &kp PAGE_DOWN
-&trans        &kp NUMBER_1  &kp NUMBER_2  &kp N9        &kp EQUAL  &kp RIGHT_ALT  &kp LEFT_ARROW      &kp DOWN      &kp RIGHT      &kp RIGHT_CONTROL
+&trans        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp RIGHT_ALT  &kp LEFT_ARROW      &kp DOWN      &kp RIGHT      &kp RIGHT_CONTROL
 &trans        &kp NUMBER_0  &kp PERIOD    &trans        &trans     &kp DELETE     &trans              &trans        &trans         &kp RIGHT_SHIFT
             >;
         };
