@@ -18,6 +18,11 @@ manifest:
       revision: main
       import: app/west.yml
 
+    # PMW3610 ドライバ（外部モジュール）
+    - name: zmk-pmw3610-driver
+      remote: kumamuk-git
+      revision: main
+
     # Sensor-rotation
     - name: zmk-feature-sensor_rotation
       remote: hsgw

@@ -76,7 +76,3 @@
         zmk,physical-layout = &physical_layout0;
     };
 };
-
-&uicr {
-    nfct-pins-as-gpios;
-};
