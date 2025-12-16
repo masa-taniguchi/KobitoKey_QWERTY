@@ -52,13 +52,6 @@
         #input-processor-cells = <0>;
         rotation-angle = <(-24)>;
     };
-
-    sensor_rotation_right: sensor-rotation-right {
-        compatible = "zmk,input-processor-sensor-rotation";
-        #input-processor-cells = <0>;
-        status = "okay";
-        rotation-angle = <24>;
-    };
 };
 
 &tb_left_listener {
@@ -73,10 +66,3 @@
             <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
     };
-
-&tb_right_listener {
-    status = "okay";
-
-    input-processors =
-        <&sensor_rotation_right>;
-};

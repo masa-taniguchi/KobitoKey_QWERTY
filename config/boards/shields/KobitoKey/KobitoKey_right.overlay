@@ -2,6 +2,7 @@
 #include "kobitokey.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
+#include <input/processors/sensor_rotation.dtsi>
 
 /* 列オフセット */
 &default_transform { col-offset = <5>; };
@@ -42,8 +43,36 @@
     };
 };
 
+/ {
+    sensor_rotation_right: sensor-rotation-right {
+        compatible = "zmk,input-processor-sensor-rotation";
+        #input-processor-cells = <0>;
+        status = "okay";
+        rotation-angle = <24>;
+    };
+};
+
 &tb_right_split {
     device = <&tb_right>;
 
     input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+};
+
+&tb_right_listener {
+    status = "okay";
+    device = <&tb_right_split>;
+
+    /* デフォルト: ポインティング */
+    input-processors = <&sensor_rotation_right>;
+
+    /* Layer 3でのみスクロール */
+    scroller {
+        layers = <3>;
+        input-processors =
+            <&sensor_rotation_right>,
+            <&zip_x_scaler 1 15>,
+            <&zip_y_scaler 1 15>,
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+    };
 };
