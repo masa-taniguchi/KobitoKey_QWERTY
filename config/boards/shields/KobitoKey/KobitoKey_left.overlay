@@ -70,7 +70,7 @@
             <&zip_x_scaler 1 15>,
             <&zip_y_scaler 1 15>,
             <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>; /* Y軸は反転しない、X軸のみ反転 */
+            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>; /* 上下（Y軸）のスクロールのみ逆にする */
     };
 
 &tb_right_listener {
