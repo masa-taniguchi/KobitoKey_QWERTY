@@ -71,7 +71,7 @@
         <&zip_y_scaler 1 15>,
         <&zip_xy_to_scroll_mapper>,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>,
-        <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>; /* 上下左右（X軸・Y軸）のスクロールをすべて反転 */
+        <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>; /* 右側Layer3と同じ設定：上下左右（X軸・Y軸）のスクロールをすべて反転 */
 };
 
 &tb_right_listener {
