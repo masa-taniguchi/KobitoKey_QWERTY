@@ -54,25 +54,13 @@
 
 &tb_right_split {
     device = <&tb_right>;
-
-    input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 };
 
 &tb_right_listener {
     status = "okay";
     device = <&tb_right_split>;
 
-    /* デフォルト: ポインティング */
-    input-processors = <&sensor_rotation_right>;
-
-    /* Layer 3でのみスクロール */
-    scroller {
-        layers = <3>;
-        input-processors =
-            <&sensor_rotation_right>,
-            <&zip_x_scaler 1 15>,
-            <&zip_y_scaler 1 15>,
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
-    };
+    input-processors =
+        <&sensor_rotation_right>,
+        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 };
