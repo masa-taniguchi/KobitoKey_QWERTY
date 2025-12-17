@@ -67,7 +67,6 @@
 
     input-processors =
             <&sensor_rotation_left>,
-            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, /* ポインティングの向きを調整 */
             <&zip_x_scaler 1 15>,
             <&zip_y_scaler 1 15>,
             <&zip_xy_to_scroll_mapper>,
@@ -79,11 +78,9 @@
     status = "okay";
     device = <&tb_right_split>;
 
-    /* デフォルト: ポインティング（感度調整） */
+    /* デフォルト: ポインティング（感度を上げる） */
     input-processors =
         <&sensor_rotation_right>,
-        <&zip_x_scaler 1 10>, /* X軸の感度を下げる */
-        <&zip_y_scaler 1 10>, /* Y軸の感度を下げる */
         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
     /* Layer 3でのみスクロール */
