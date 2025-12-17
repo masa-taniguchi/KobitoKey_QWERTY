@@ -50,7 +50,7 @@
         compatible = "zmk,input-processor-sensor-rotation";
         status = "okay";
         #input-processor-cells = <0>;
-        rotation-angle = <24>; /* 右側と同じ向きに揃える */
+        rotation-angle = <(-24)>; /* 左側は-24度（左右対称） */
     };
 
     sensor_rotation_right: sensor-rotation-right {
@@ -67,6 +67,7 @@
 
     input-processors =
             <&sensor_rotation_left>,
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, /* ポインティングの向きを調整 */
             <&zip_x_scaler 1 15>,
             <&zip_y_scaler 1 15>,
             <&zip_xy_to_scroll_mapper>,
