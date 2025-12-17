@@ -43,24 +43,7 @@
     };
 };
 
-/ {
-    sensor_rotation_right: sensor-rotation-right {
-        compatible = "zmk,input-processor-sensor-rotation";
-        #input-processor-cells = <0>;
-        status = "okay";
-        rotation-angle = <24>;
-    };
-};
 
 &tb_right_split {
     device = <&tb_right>;
-};
-
-&tb_right_listener {
-    status = "okay";
-    device = <&tb_right>;
-
-    input-processors =
-        <&sensor_rotation_right>,
-        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 };
