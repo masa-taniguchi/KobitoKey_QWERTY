@@ -50,7 +50,7 @@
         compatible = "zmk,input-processor-sensor-rotation";
         status = "okay";
         #input-processor-cells = <0>;
-        rotation-angle = <(-24)>;
+        rotation-angle = <24>; /* 右側と同じ向きに揃える */
     };
 
     sensor_rotation_right: sensor-rotation-right {
@@ -78,9 +78,11 @@
     status = "okay";
     device = <&tb_right_split>;
 
-    /* デフォルト: ポインティング */
+    /* デフォルト: ポインティング（感度調整） */
     input-processors =
         <&sensor_rotation_right>,
+        <&zip_x_scaler 1 10>, /* X軸の感度を下げる */
+        <&zip_y_scaler 1 10>, /* Y軸の感度を下げる */
         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
     /* Layer 3でのみスクロール */
