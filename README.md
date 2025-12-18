@@ -151,6 +151,10 @@ ZMKファームウェアを使用する場合、初回接続時や接続が切�
    - `CONFIG_ZMK_SPLIT_ROLE_CENTRAL=y`が左側に設定されているか確認
    - 右側にはこの設定がないことを確認
    - 左右のファームウェアのバージョンが一致しているか確認
+   - 以下の設定が左右両方に追加されているか確認（最新のファームウェアに含まれています）：
+     - `CONFIG_BT_CTLR_TX_PWR_PLUS_8=y`（Bluetooth送信電力を上げる）
+     - `CONFIG_ZMK_SPLIT=y`（split keyboardサポートを有効化）
+     - `CONFIG_ZMK_SPLIT_BLE=y`（split接続にBluetoothを使用）
 
 7. **一時的な回避策**
    - USB接続で安定して使用できる場合は、当面USB接続を使用
